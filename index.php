@@ -34,42 +34,42 @@
     </style>
 </head>
 
-<body class="container bg-transparent">
+<body class="container bg-dark">
     <div class=" bg-dark text-white m-5 p-5 border border-primary">
         <div class="d-flex justify-content-center">
             <h1 class="display-2"> Map </h1>
         </div>
-        <div class="container my-4">
+        <div class="container my-4 ">
             <div class="d-flex justify-content-center">
                 <button class="btn btn-outline-success" data-bs-target="#showForm"
                     data-bs-toggle="modal">ค้นหาตำแหน่ง</button>
             </div>
-            <div class="modal fade" id="showForm" style="display: none;" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+            <div class="modal fade " id="showForm" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog ">
+                    <div class="modal-content text-light bg-dark">
                         <div class="modal-header">
-                            <h5 class="modal-title">แบบฟอร์มลงทะเบียน</h5>
+                            <h5 class="modal-title">ระบุพื้นที่</h5>
                             <button class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body ">
                             <form>
-                                <div class=" input-group mb-3">
+                                <div class=" input-group mb-3 ">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">lat</span>
+                                        <span class="input-group-text text-light bg-dark">Lat (เส้นละติจูด)</span>
                                     </div>
-                                    <input id="X" type="text" placeholder="โปรดป้อน lat ของคุณ" class="form-control">
+                                    <input id="X" type="text" placeholder="โปรดป้อน lat ของคุณ" class="form-control text-light bg-dark">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">lng</span>
+                                        <span class="input-group-text text-light bg-dark">Long (เส้นลองจิจูด)</span>
                                     </div>
-                                    <input id="Y" type="text" placeholder="โปรดป้อน lng ของคุณ" class="form-control">
+                                    <input id="Y" type="text" placeholder="โปรดป้อน lng ของคุณ" class="form-control text-light bg-dark">
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text">Cnt</span>
+                                        <span class="input-group-text text-light bg-dark">Cnt</span>
                                     </div>
-                                    <input id="Z" type="text" placeholder="โปรดป้อน Cnt ของคุณ" class="form-control">
+                                    <input id="Z" type="text" placeholder="โปรดป้อน Cnt ของคุณ" class="form-control text-light bg-dark">
                                 </div>
                             </form>
                         </div>
@@ -120,9 +120,9 @@
                     var seconds = "0" + date.getSeconds();
                     var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-                    var line = "<div class='accordion-item alert mt-3' id='div_" + i + "'>"
-                    line += "<h2 class='accordion-header'><button class='btn_"+i+" accordion-button collapsed' data-bs-toggle='collapse' data-bs-target='#content"+i+"'aria-expanded='false'>" + data.list[i].name +  "</button></h2>"
-                    line += "<div id='content"+i+"' class='collapse'>"
+                    var line = "<div class='accordion-item border border-primary  mt-3' id='div_" + i + "'>"
+                    line += "<h2 class='accordion-header'><button class='btn_"+i+" accordion-button collapsed text-light bg-secondary' data-bs-toggle='collapse' data-bs-target='#content"+i+"'aria-expanded='false'>" + data.list[i].name +  "</button></h2>"
+                    line += "<div id='content"+i+"' class='collapse text-light bg-dark'>"
                     line += "<div class='accordion-body'>"
                     line += "<p id='text-1'>เวลา : " + formattedTime + "</p>"
                     line += "<p id='text-1'>สภาพอากาศ : " + data.list[i].weather[0].description + "</p>"
