@@ -99,7 +99,6 @@
                 var minutes_2 = "0" + date_2.getMinutes();
                 var seconds_2 = "0" + date_2.getSeconds();
                 var formattedTime_2 = hours_2 + ':' + minutes_2.substr(-2) + ':' + seconds_2.substr(-2);
-                console.log("เวลา",formattedTime , "พระอาทิตย์ขึ้น",formattedTime_1 , "พระอาทิตย์ตก",formattedTime_2);
 
                 let data_temp = data.main.temp;
                 var temp = data_temp - 273.15;
