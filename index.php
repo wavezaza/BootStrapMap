@@ -79,8 +79,6 @@
         var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + x + "&lon=" + y + "&appid=e0201ad6f50928548a0ceb7ea7920a94"
         $.getJSON(url)
             .done((data) => {
-                console.log(data);
-
                 let unix_timestamp = data.dt;
                 var date = new Date(unix_timestamp * 1000);
                 var hours = date.getHours();
