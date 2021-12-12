@@ -79,6 +79,8 @@
         var url = "https://api.openweathermap.org/data/2.5/weather?lat=" + x + "&lon=" + y + "&appid=e0201ad6f50928548a0ceb7ea7920a94"
         $.getJSON(url)
             .done((data) => {
+                console.log(data);
+
                 let unix_timestamp = data.dt;
                 var date = new Date(unix_timestamp * 1000);
                 var hours = date.getHours();
@@ -99,13 +101,18 @@
                 var minutes_2 = "0" + date_2.getMinutes();
                 var seconds_2 = "0" + date_2.getSeconds();
                 var formattedTime_2 = hours_2 + ':' + minutes_2.substr(-2) + ':' + seconds_2.substr(-2);
-            
+                console.log("เวลา",formattedTime , "พระอาทิตย์ขึ้น",formattedTime_1 , "พระอาทิตย์ตก",formattedTime_2);
+
+                let data_temp = data.main.temp;
+                var temp = data_temp - 273.15;
+                
                 var line = "<div class='accordion-item border border-primary  mt-3' >"
                 line += "<h2 class='accordion-header'><button class=' accordion-button collapsed text-light bg-secondary' data-bs-toggle='collapse' data-bs-target='#content1'aria-expanded='false'>Country : " + data.sys.country + "  (" + data.name + ")</button></h2>"
                 line += "<div id='content1' class='collapse text-light bg-dark'>"
                 line += "<div class='accordion-body'>"
                 line += "<p id='text-1'>เวลา : " + formattedTime + "</p>"
-                line += "<p id='text-1'>สภาพอากาศ : " + data.weather[0].description + "</p>"
+                line += "<p id='text-1'>สภาพอากาศ : " + data.weather[0].description +"</p>"
+                line += "<p id='text-1'>อุณหภูมิ : " + temp.toFixed(2) +"°</p>"
                 line += "<p id='text-1'>องศาลม : " + data.wind.deg + "</p>"
                 line += "<p id='text-1'>ความเร็วลม : " + data.wind.speed + "</p>"
                 line += "<p id='text-1'>ความชื้น : " + data.main.humidity + "</p>"
