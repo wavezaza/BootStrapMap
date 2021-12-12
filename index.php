@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -100,7 +99,7 @@
                 var minutes_2 = "0" + date_2.getMinutes();
                 var seconds_2 = "0" + date_2.getSeconds();
                 var formattedTime_2 = hours_2 + ':' + minutes_2.substr(-2) + ':' + seconds_2.substr(-2);
-
+            
                 var line = "<div class='accordion-item border border-primary  mt-3' >"
                 line += "<h2 class='accordion-header'><button class=' accordion-button collapsed text-light bg-secondary' data-bs-toggle='collapse' data-bs-target='#content1'aria-expanded='false'>Country : " + data.sys.country + "  (" + data.name + ")</button></h2>"
                 line += "<div id='content1' class='collapse text-light bg-dark'>"
