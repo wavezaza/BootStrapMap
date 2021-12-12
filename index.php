@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-4" id="map"></div>
+        <div class="container mt-4" id="map" ></div>
         <script>
             // map
             var map;
@@ -128,6 +128,8 @@
                     line += "<p id='text-1'>สภาพอากาศ : " + data.list[i].weather[0].description + "</p>"
                     line += "<p id='text-1'>องศาลม : " + data.list[i].wind.deg + "</p>"
                     line += "<p id='text-1'>ความเร็วลม : " + data.list[i].wind.speed + "</p>"
+                    line += "<p id='text-1'>ความชื้น : " + data.list[i].main.humidity + "</p>"
+                    line += "<p id='text-1'>ความดัน : " + data.list[i].main.pressure + "</p>"
                     line += "<p id='text-1'></p>"
                     line += "</div>"
                     line += "</div>"
